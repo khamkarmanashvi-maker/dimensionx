@@ -1,0 +1,329 @@
+:root {
+  --dx-primary: #d62828;        /* Red header color */
+  --dx-primary-soft: #ffe6e0;   /* Soft peach buttons background */
+  --dx-bg: #ffffff;
+  --dx-text: #222222;
+  --dx-muted: #666666;
+  --dx-radius-lg: 16px;
+  --dx-radius-pill: 999px;
+  --dx-shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.06);
+  --dx-font-main: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--dx-font-main);
+  background: var(--dx-bg);
+  color: var(--dx-text);
+  line-height: 1.6;
+}
+
+/* Layout helpers */
+.dx-container {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.dx-header {
+  background: var(--dx-primary);
+  color: #ffffff;
+  padding: 18px 0;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.dx-logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* ===== Hero / Intro ===== */
+.dx-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+  gap: 24px;
+  margin: 28px 0;
+  align-items: center;
+}
+
+.dx-hero-text p {
+  margin-bottom: 14px;
+  color: var(--dx-muted);
+  font-size: 0.98rem;
+}
+
+/* Images block */
+.dx-hero-images {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dx-hero-images img {
+  width: 100%;
+  border-radius: var(--dx-radius-lg);
+  box-shadow: var(--dx-shadow-soft);
+  object-fit: cover;
+}
+
+/* ===== Year selection ===== */
+.dx-year-section {
+  margin: 20px 0 40px;
+}
+
+.dx-section-title {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.dx-year-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Pill buttons (reusable across pages) */
+.dx-pill-btn {
+  border: none;
+  background: var(--dx-primary-soft);
+  border-radius: var(--dx-radius-pill);
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--dx-text);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.dx-pill-btn:hover {
+  background: #ffd1c4;
+  box-shadow: var(--dx-shadow-soft);
+  transform: translateY(-1px);
+}
+
+.dx-pill-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===== Footer ===== */
+.dx-footer {
+  background: #fafafa;
+  border-top: 1px solid #eeeeee;
+  padding: 14px 0;
+  font-size: 0.8rem;
+  color: var(--dx-muted);
+  text-align: center;
+}
+
+/* ===== Shared components for future pages ===== */
+
+/* Card container */
+.dx-card {
+  background: #ffffff;
+  border-radius: var(--dx-radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--dx-shadow-soft);
+}
+
+/* Section headings on later pages */
+.dx-heading {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Small pill tags */
+.dx-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 3px;
+  border-radius: var(--dx-radius-pill);
+  background: #f5f5f5;
+  font-size: 0.78rem;
+  color: var(--dx-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dx-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.dx-bottom-cta {
+  margin: 40px 0 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Large primary button */
+.dx-primary-btn {
+  border: none;
+  background: var(--dx-primary);
+  color: #ffffff;
+  border-radius: var(--dx-radius-pill);
+  padding: 18px 48px; /* Larger padding */
+  font-size: 1.1rem; /* Larger font */
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(214, 40, 40, 0.3);
+  transition: all 0.2s ease;
+  min-width: 280px; /* Minimum width */
+  max-width: 90vw; /* Responsive max */
+}
+
+.dx-primary-btn:hover {
+  background: #b92020;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(214, 40, 40, 0.4);
+}
+
+.dx-primary-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive button */
+@media (max-width: 768px) {
+  .dx-primary-btn {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    min-width: 300px;
+    max-width: 95vw;
+  }
+}
+.bg-video-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg-video-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Fullscreen video background - now translucent */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.25; /* Makes video translucent */
+}
+
+/* Dark overlay for better contrast (adjust as needed) */
+.bg-video-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* Dark tint over video */
+  z-index: 0;
+}
+
+/* Transparent header (no red background) */
+.dx-header {
+  background: transparent !important; /* Removes red */
+  backdrop-filter: blur(10px); /* Subtle glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Black text throughout */
+.dx-hero-text p,
+.dx-hero-text h1,
+.dx-hero-text h2,
+.dx-bottom-cta button,
+.dx-footer p {
+  color: #000000 !important; /* Pure black */
+}
+
+.dx-container {
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+}
+
+.dx-hero,
+.dx-footer {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: none;
+}
+
+/* Logo styling (white for contrast if needed) */
+.dx-logo-img {
+  height: 92px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Shadow for visibility */
+}
+
+/* Button styling with black text */
+.dx-primary-btn,
+.dx-primary-btn * {
+  color: #ffffff !important; /* Forces white text + children */
+  margin-right: 10px;
+}
+
+.dx-primary-btn {
+  background: #000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+.dx-bottom-cta button,
+.dx-primary-btn {
+  color: rgb(255, 255, 255) !important;
+}
+
+.dx-bottom-cta button span,
+.dx-primary-btn span,
+.dx-primary-btn * {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Target pseudo-elements too */
+.dx-primary-btn::before,
+.dx-primary-btn::after {
+  color: rgb(255, 255, 255) !important;
+}
+.dx-secondary-btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #4f46e5;
+  color: #fff;
+  font-weight: 600;
+  margin-left: 10px;
+}
+#review{
+  text-decoration: none;
+  background: #000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  background: #b92020;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(214, 40, 40, 0.4);
+  transform: translateY(0);
+  font-size: 17.6px;
+  margin: 0px,10px,0px,0px;
+}
