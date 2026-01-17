@@ -252,12 +252,15 @@ body {
 .dx-container {
   position: relative;
   z-index: 1;
+  font-size: 15px;
 }
 
 .dx-hero,
 .dx-footer {
   position: relative;
   z-index: 1;
+  background: transparent;
+  border: none;
 }
 
 /* Logo styling (white for contrast if needed) */
@@ -272,6 +275,7 @@ body {
 .dx-primary-btn,
 .dx-primary-btn * {
   color: #ffffff !important; /* Forces white text + children */
+  margin-right: 10px;
 }
 
 .dx-primary-btn {
