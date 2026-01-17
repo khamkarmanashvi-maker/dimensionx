@@ -312,7 +312,7 @@ body {
   font-weight: 600;
   margin-left: 10px;
 }
-#review{
+.review{
   text-decoration: none;
   background: #000 !important;
   color: #ffffff !important;
@@ -327,3 +327,4 @@ body {
   font-size: 17.6px;
   margin: 0px,10px,0px,0px;
 }
+
